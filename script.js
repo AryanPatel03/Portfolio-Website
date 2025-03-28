@@ -86,6 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 2500);
 });
 
+// Hamburger Menu Toggle for Mobile
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+});
+
 // Smooth Scrolling for internal anchors and navigation links
 document.querySelectorAll('.nav-links a, .contact-btn, .back-btn').forEach(link => {
   link.addEventListener('click', function(e) {
@@ -114,6 +125,17 @@ function scrollToNext(element) {
   if (nextSection) {
     window.scrollTo({
       top: nextSection.offsetTop - 70,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// New function: Scroll directly to the footer
+function scrollToFooter() {
+  const footer = document.getElementById('footer');
+  if (footer) {
+    window.scrollTo({
+      top: footer.offsetTop - 70,
       behavior: 'smooth'
     });
   }

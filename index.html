@@ -30,6 +30,12 @@
           <li><a href="#contact" class="nav-link">CONTACT</a></li>
         </ul>
       </div>
+      <!-- Hamburger Menu for mobile -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <a href="contact.html" class="contact-btn">CONTACT</a>
     </nav>
   </header>
@@ -216,22 +222,35 @@
       </p>
       <p><strong>Email:</strong> <a href="mailto:aryan.virani@outlook.com">aryan.virani@outlook.com</a> | <strong>Phone:</strong> +91 63524 12728</p>
       <a href="contact.html" class="btn contact-btn">Send a Message</a>
+      <!-- Down Arrow in Contact Section that scrolls directly to the footer -->
+      <div class="section-arrow" onclick="scrollToFooter()" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-chevron-down"></i>
+      </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer data-aos="fade-up">
-    <div class="social-media">
-      <a href="https://facebook.com/aryan.virani.507/" title="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://x.com/aryanpatel_021" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com/in/aryan-virani-522052224/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://discord.gg/rXMsjp6q" title="Discord"><i class="fab fa-discord"></i></a>
-      <a href="https://github.com/AryanPatel03" title="GitHub"><i class="fab fa-github"></i></a>
+  <!-- Note: Added id="footer" so that the arrow in Contact scrolls here -->
+  <footer id="footer" data-aos="fade-up">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="social-media">
+          <a href="https://facebook.com/aryan.virani.507/" title="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/x.com/aryanpatel_021/" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com/in/aryan-virani-522052224/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://discord.gg/rXMsjp6q/" title="Discord"><i class="fab fa-discord"></i></a>
+          <a href="https://github.com/AryanPatel03/" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <p>Email: <a href="mailto:aryan.virani@outlook.com">aryan.virani@outlook.com</a></p>
+        <p>Phone: +91 63524 12728</p>
+        <p>Address: Nana Mava, Rajkot, Gujarat, India</p>
+        <p>&copy; 2025 Aryan Virani. All Rights Reserved.</p>
+      </div>
+      <div class="footer-right">
+        <!-- Animated Google Map iframe -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14769.92643127403!2d70.76994170695733!3d22.25973923276135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca589340c5af%3A0x6306044b7b2324bf!2sMavdi%2C%20Rajkot%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1743154508561!5m2!1sen!2sin" width="600" height="244" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
-    <p>Email: <a href="mailto:aryan.virani@outlook.com">aryan.virani@outlook.com</a></p>
-    <p>Phone: +91 63524 12728</p>
-    <p>Address: Nana Mava, Rajkot, Gujarat, India</p>
-    <p>&copy; 2025 Aryan Virani. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
