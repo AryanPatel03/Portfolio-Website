@@ -1,0 +1,520 @@
+/* CSS Variables for easy customization */
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #0056b3;
+  --accent-color: #28a745;
+  --bg-color: #f0f4f8;
+  --text-color: #333;
+  --header-bg: #fff;
+  --header-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--header-bg);
+  box-shadow: 0 4px 20px var(--header-shadow);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-links-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  left: 0;
+  bottom: -8px;
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.contact-btn {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Back to Home Button (Contact Page) */
+.back-home {
+  padding: 1rem 2rem;
+  text-align: left;
+}
+.back-btn {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.back-btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* Sections */
+.section {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Dynamic Text Animation Styles */
+#typed-text {
+  position: relative;
+  display: inline-block;
+  min-height: 40px; /* ensures space for text and cursor */
+}
+#typed-text .text {
+  display: inline;
+}
+#typed-text .cursor {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  font-weight: 900;
+  font-size: 2.6rem;
+  /*increasedsize*/color: var(--primary-color);
+  /*sameasbefore*/animation: blink 0.7s infinite, slide 0.5s ease-in-out;
+  -webkit-animation: blink 0.7s infinite, slide 0.5s ease-in-out;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+@keyframes slide {
+  from { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  to { transform: scale(1); }
+}
+
+/* Section Down Arrow */
+.section-arrow {
+  margin-top: 20px;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+.section-arrow i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+.section-arrow:hover i {
+  transform: translateY(5px);
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(10px); }
+  60% { transform: translateY(5px); }
+}
+
+/* Hero Section with Photo Slider, Parallax & Gradient Overlay */
+.hero {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  overflow: hidden;
+  position: relative;
+}
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1200px;
+  width: 100%;
+  perspective: 1000px;
+}
+
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+  background: transparent;
+}
+.slider-images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slider-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: ellipse(50% 70% at 50% 50%);
+  border: 5px solid #fff;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.slider-image:first-child {
+  opacity: 1;
+}
+.slider-image:hover {
+  transform: scale(1.05); /* image comes forward */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* added shadow underneath */
+}
+
+/* Gradient overlay on hero slider */
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  z-index: 1;
+}
+.slider-image {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Content */
+.hero-content {
+  max-width: 600px;
+}
+.profile-name {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.5s ease;
+  cursor: pointer;
+}
+.profile-name:hover {
+  color: green;
+}
+.hero-content h2 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.hire-me {
+  background: var(--accent-color);
+}
+.hire-me:hover {
+  background: #218838;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(40,167,69,0.4);
+}
+.resume {
+  background: #ffc107;
+  color: #333;
+}
+.resume:hover {
+  background: #e0a800;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255,193,7,0.4);
+}
+
+/* About Section */
+.about-content {
+  max-width: 800px;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+.about-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Projects Section with Masonry Layout & Hover Effects */
+.project-container {
+  column-count: 2;
+  column-gap: 1rem;
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+}
+.project {
+  background: #fff;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+.project h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.project p {
+  margin-bottom: 1rem;
+}
+
+/* Achievements Section */
+#achievements ul {
+  max-width: 800px;
+  text-align: left;
+  list-style-type: disc;
+  padding-left: 2rem;
+}
+#achievements ul li {
+  margin-bottom: 1rem;
+}
+#achievements ul li ul {
+  list-style-type: circle;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+}
+
+/* Skills Section with Progress Bars */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+.skill-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.skill-item:hover {
+  transform: scale(1.05);
+}
+.skill-item i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+  margin: 10px 0;
+}
+.progress {
+  background: var(--primary-color);
+  height: 100%;
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+.skill-item p {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Contact Section */
+#contact p {
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Form (Separate Page) */
+.contact-form {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  width: 100%;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+.contact-form textarea {
+  resize: vertical;
+}
+.contact-form button {
+  background: var(--primary-color);
+  padding: 1rem;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.social-media {
+  margin-bottom: 2rem;
+}
+.social-media a {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-media a:hover {
+  transform: scale(1.2);
+  color: var(--primary-color);
+}
+footer p {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+  .hero-slider {
+    width: 300px;
+    height: 380px;
+  }
+  .buttons {
+    justify-content: center;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .contact-btn {
+    padding: 0.5rem 1rem;
+  }
+}

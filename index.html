@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aryan Virani - Portfolio</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- AOS for scroll animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Custom Script -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="#" class="logo">PORTFOLIO</a>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="#profile" class="nav-link">PROFILE</a></li>
+          <li><a href="#about" class="nav-link">ABOUT</a></li>
+          <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+          <li><a href="#achievements" class="nav-link">ACHIEVEMENTS</a></li>
+          <li><a href="#skills" class="nav-link">SKILLS</a></li>
+          <li><a href="#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+      </div>
+      <a href="contact.html" class="contact-btn">CONTACT</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Profile Section with Photo Slider, Parallax, Animated Text & Section Arrow -->
+    <section id="profile" class="section hero" data-aos="fade-up">
+      <div class="hero-container">
+        <!-- Hero Slider Container -->
+        <div class="hero-slider" data-aos="zoom-in">
+          <div class="slider-images">
+            <img src="./photo/IMG20240128190043.jpg" alt="Slide 1" class="slider-image" />
+            <img src="./photo/IMG_8006.jpg" alt="Slide 2" class="slider-image" />
+            <img src="./photo/project photo.jpg" alt="Slide 3" class="slider-image" />
+          </div>
+        </div>
+        <div class="hero-content">
+          <h1 class="profile-name">ARYAN VIRANI</h1>
+          <!-- Dynamic text animation element with enhanced cursor -->
+          <h2 id="typed-text"><span class="text"></span><span class="cursor">|</span></h2>
+          <p>
+            Hello! I’m a passionate web developer specializing in creating stunning, interactive digital experiences. My focus is on clean code, elegant design, and innovative solutions.
+          </p>
+          <p>
+            With a background in B.Tech Computer Science and hands-on experience in modern technologies, I transform ideas into reality.
+          </p>
+          <div class="buttons">
+            <a href="https://wa.me/916352412728" class="btn hire-me" title="Hire me via WhatsApp">Hire Me</a>
+            <a href="./resume/Aryan Resume.pdf" class="btn resume" title="Download Resume">Download Resume</a>
+          </div>
+        </div>
+      </div>
+      <!-- Down Arrow to Next Section -->
+      <div class="section-arrow" onclick="scrollToNext(this)" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section" data-aos="fade-up">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>
+          I’m a final-year B.Tech Computer Science student, set to graduate in May 2025. My academic journey has provided me with a robust foundation in programming, web development, and software engineering. I have earned certifications in Python, JavaScript, and Full-Stack Development, reflecting my dedication to mastering my craft.
+        </p>
+        <p>
+          I have worked on diverse projects ranging from personal websites to complex web applications. I thrive in dynamic, collaborative environments, where I can challenge myself and continuously learn new technologies.
+        </p>
+        <p>
+          My approach balances functionality with visual appeal, ensuring every project delivers an outstanding user experience. I’m driven by innovation and a passion for creating impactful digital solutions.
+        </p>
+      </div>
+      <a href="#contact" class="btn contact-btn">Contact Me</a>
+      <div class="section-arrow" onclick="scrollToNext(this)" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section" data-aos="fade-up">
+      <h2>My Projects</h2>
+      <div class="project-container masonry">
+        <div class="project" data-aos="zoom-in">
+          <h3>E-commerce Platform</h3>
+          <p>
+            A fully functional e-commerce website featuring user authentication, product browsing, dynamic cart updates, and secure payment integration.
+          </p>
+          <p><strong>Technologies:</strong> React, Node.js, Express, MongoDB, Stripe API</p>
+          <p><a href="#" title="Live Demo">Live Demo</a> | <a href="#" title="GitHub Repository">GitHub Repo</a></p>
+        </div>
+        <div class="project" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Weather Dashboard</h3>
+          <p>
+            A dynamic weather application that fetches real-time data, offering current conditions, a 5-day forecast, and detailed weather metrics.
+          </p>
+          <p><strong>Technologies:</strong> JavaScript, HTML5, CSS3, OpenWeather API</p>
+          <p><a href="#" title="Live Demo">Live Demo</a> | <a href="#" title="GitHub Repository">GitHub Repo</a></p>
+        </div>
+        <div class="project" data-aos="zoom-in" data-aos-delay="200">
+          <h3>Personal Blog Platform</h3>
+          <p>
+            A custom-built blog for sharing tech insights, coding tutorials, and personal projects. It features category filtering, a search bar, and smooth transitions.
+          </p>
+          <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Node.js</p>
+          <p><a href="#" title="Live Demo">Live Demo</a> | <a href="#" title="GitHub Repository">GitHub Repo</a></p>
+        </div>
+      </div>
+      <a href="#contact" class="btn contact-btn">Contact Me</a>
+      <div class="section-arrow" onclick="scrollToNext(this)" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section" data-aos="fade-up">
+      <h2>Achievements</h2>
+      <ul class="achievement-list">
+        <li>
+          <strong>National Hackathon Winner:</strong>
+          <ul>
+            <li>Developed an innovative web application focused on sustainability.</li>
+            <li>Collaborated with a diverse team to secure first place.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Best Student Developer Award:</strong>
+          <ul>
+            <li>Recognized for outstanding contributions to open-source projects.</li>
+            <li>Received accolades from industry experts and academic institutions.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Python Certification:</strong>
+          <ul>
+            <li>Achieved a score of 95% in a comprehensive Python course.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Freelance Project Success:</strong>
+          <ul>
+            <li>Delivered over 5 projects with consistently 5-star client ratings.</li>
+            <li>Built lasting relationships through high-quality work.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Workshop Leadership:</strong>
+          <ul>
+            <li>Conducted coding workshops for 100+ students, empowering future developers.</li>
+          </ul>
+        </li>
+      </ul>
+      <a href="#contact" class="btn contact-btn">Contact Me</a>
+      <div class="section-arrow" onclick="scrollToNext(this)" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" data-aos="fade-up">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item" title="HTML5: Expert in semantic markup and modern HTML features.">
+          <i class="fab fa-html5"></i>
+          <h3>HTML5</h3>
+          <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+          <p>90%</p>
+        </div>
+        <div class="skill-item" title="CSS3: Proficient in animations, transitions, and responsive design.">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS3</h3>
+          <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+          <p>85%</p>
+        </div>
+        <div class="skill-item" title="JavaScript: Skilled in dynamic scripting and modern frameworks.">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+          <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+          <p>80%</p>
+        </div>
+        <div class="skill-item" title="React: Experienced in building scalable and modern user interfaces.">
+          <i class="fab fa-react"></i>
+          <h3>React</h3>
+          <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
+          <p>75%</p>
+        </div>
+        <div class="skill-item" title="Node.js: Proficient in server-side development and API creation.">
+          <i class="fab fa-node-js"></i>
+          <h3>Node.js</h3>
+          <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
+          <p>70%</p>
+        </div>
+      </div>
+      <div class="section-arrow" onclick="scrollToNext(this)" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <h2>Get in Touch</h2>
+      <p>
+        Interested in collaborating or have a project in mind? I’d love to hear from you! Whether it’s a question, proposal, or just a friendly chat, feel free to reach out.
+      </p>
+      <p><strong>Email:</strong> <a href="mailto:aryan.virani@outlook.com">aryan.virani@outlook.com</a> | <strong>Phone:</strong> +91 63524 12728</p>
+      <a href="contact.html" class="btn contact-btn">Send a Message</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer data-aos="fade-up">
+    <div class="social-media">
+      <a href="https://facebook.com/aryan.virani.507/" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://x.com/aryanpatel_021" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/aryan-virani-522052224/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://discord.gg/rXMsjp6q" title="Discord"><i class="fab fa-discord"></i></a>
+      <a href="https://github.com/AryanPatel03" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <p>Email: <a href="mailto:aryan.virani@outlook.com">aryan.virani@outlook.com</a></p>
+    <p>Phone: +91 63524 12728</p>
+    <p>Address: Nana Mava, Rajkot, Gujarat, India</p>
+    <p>&copy; 2025 Aryan Virani. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
